@@ -42,10 +42,7 @@ write.table(df, "data//Getting_and_Cleaning_Data/merge_data.txt")
 
 # From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+final_df <- aggregate(df[, 3:ncol(df)], by=list(subject = df$subject), mean)
 
-
-
-
-
-
+write.table(final_df, "data//Getting_and_Cleaning_Data/final_data.txt", row.name=FALSE )
 
